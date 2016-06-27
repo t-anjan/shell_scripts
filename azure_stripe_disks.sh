@@ -27,7 +27,13 @@ scan_for_new_disks() {
         # "assume" it is not partitioned.
         if [ ! -b ${DEV}1 ];
         then
-            RET+="${DEV} "
+            # Partition the disks.
+            parted --align optimal --script "${DEV}" \
+                mklabel gpt \
+                mkpart primary 0% 100% \
+                set 1 raid on
+
+            RET+="${DEV}1 "
         fi
     done
     echo "${RET}"
@@ -69,24 +75,19 @@ do_partition() {
 # disk, using all available space
     DISK=${1}
     echo "Partitioning disk $DISK"
-    echo "n
-p
-1
 
+    parted --align optimal --script "${DISK}" \
+    mklabel gpt \
+    mkpart primary 0% 100%
+    #> /dev/null 2>&1
 
-w
-" | fdisk "${DISK}"
-#> /dev/null 2>&1
-
-#
-# Use the bash-specific $PIPESTATUS to ensure we get the correct exit code
-# from fdisk and not from echo
-if [ ${PIPESTATUS[1]} -ne 0 ];
-then
-    echo "An error occurred partitioning ${DISK}" >&2
-    echo "I cannot continue" >&2
-    exit 2
-fi
+    #
+    if [ ${?} -ne 0 ];
+    then
+        echo "An error occurred partitioning ${DISK}" >&2
+        echo "I cannot continue" >&2
+        exit 2
+    fi
 }
 
 add_to_fstab() {
@@ -97,7 +98,7 @@ add_to_fstab() {
     then
         echo "Not adding ${UUID} to fstab again (it's already there!)"
     else
-        LINE="UUID=${UUID} ${MOUNTPOINT} ext4 defaults,noatime 0 0"
+        LINE="UUID=${UUID} ${MOUNTPOINT} ext4 defaults,noatime,nobootwait 0 2"
         echo -e "${LINE}" >> /etc/fstab
     fi
 }
