@@ -98,7 +98,7 @@ add_to_fstab() {
     then
         echo "Not adding ${UUID} to fstab again (it's already there!)"
     else
-        LINE="UUID=${UUID} ${MOUNTPOINT} ext4 defaults,noatime,nobootwait 0 2"
+        LINE="UUID=${UUID} ${MOUNTPOINT} xfs defaults,noatime,nobootwait 0 2"
         echo -e "${LINE}" >> /etc/fstab
     fi
 }
@@ -132,7 +132,9 @@ configure_disks() {
     fi
 
     echo "Creating filesystem on ${PARTITION}."
-    mkfs -t ext4 ${PARTITION}
+    apt-get update
+    apt-get -q -y install xfsprogs
+    mkfs.xfs -f ${PARTITION}
     mkdir "${MOUNTPOINT}"
     read UUID FS_TYPE < <(blkid -u filesystem ${PARTITION}|awk -F "[= ]" '{print $3" "$5}'|tr -d "\"")
     add_to_fstab "${UUID}" "${MOUNTPOINT}"
