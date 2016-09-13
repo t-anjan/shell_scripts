@@ -27,13 +27,7 @@ scan_for_new_disks() {
         # "assume" it is not partitioned.
         if [ ! -b ${DEV}1 ];
         then
-            # Partition the disks.
-            parted --align optimal --script "${DEV}" \
-                mklabel gpt \
-                mkpart primary 0% 100% \
-                set 1 raid on
-
-            RET+="${DEV}1 "
+            RET+="${DEV} "
         fi
     done
     echo "${RET}"
@@ -59,7 +53,20 @@ create_raid0_ubuntu() {
     fi
     echo "Creating raid0"
     udevadm control --stop-exec-queue
-    echo "yes" | mdadm --create "$RAIDDISK" --name=data --level=0 --chunk="$RAIDCHUNKSIZE" --raid-devices="$DISKCOUNT" "${DISKS[@]}"
+
+    declare -a PARTITIONS
+    for DISK in "${DISKS[@]}";
+    do
+        # Partition the disks.
+        parted --align optimal --script "${DISK}" \
+            mklabel gpt \
+            mkpart primary 0% 100% \
+            set 1 raid on
+
+        PARTITIONS+="${DISK}1 "
+    done;
+
+    echo "yes" | mdadm --create "$RAIDDISK" --name=data --level=0 --chunk="$RAIDCHUNKSIZE" --raid-devices="$DISKCOUNT" "${PARTITIONS[@]}"
     udevadm control --start-exec-queue
     mdadm --detail --verbose --scan > /etc/mdadm.conf
 }
@@ -77,8 +84,8 @@ do_partition() {
     echo "Partitioning disk $DISK"
 
     parted --align optimal --script "${DISK}" \
-    mklabel gpt \
-    mkpart primary 0% 100%
+        mklabel gpt \
+        mkpart primary 0% 100%
     #> /dev/null 2>&1
 
     #
