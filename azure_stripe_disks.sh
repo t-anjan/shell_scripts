@@ -43,20 +43,10 @@ get_disk_count() {
 }
 
 create_raid0_ubuntu() {
-    dpkg -s mdadm
-    if [ ${?} -eq 1 ];
-    then
-        echo "installing mdadm"
-        export DEBIAN_FRONTEND=noninteractive
-        apt-get update
-        apt-get -q -y install mdadm --no-install-recommends
-    fi
-    echo "Creating raid0"
-    udevadm control --stop-exec-queue
-
     declare -a PARTITIONS
     for DISK in "${DISKS[@]}";
     do
+        echo "Creating RAID partition in ${DISK}."
         # Partition the disks.
         parted --align optimal --script "${DISK}" \
             mklabel gpt \
@@ -65,8 +55,23 @@ create_raid0_ubuntu() {
 
         PARTITIONS+="${DISK}1 "
     done;
+    DISK_PARTITIONS=($(echo "${PARTITIONS}"))
+    echo "Partitions are ${DISK_PARTITIONS[@]}"
 
-    echo "yes" | mdadm --create "$RAIDDISK" --name=data --level=0 --chunk="$RAIDCHUNKSIZE" --raid-devices="$DISKCOUNT" "${PARTITIONS[@]}"
+    dpkg -s mdadm
+
+    if [ ${?} -eq 1 ];
+    then
+        echo "installing mdadm"
+        export DEBIAN_FRONTEND=noninteractive
+        apt-get update
+        apt-get -q -y install mdadm --no-install-recommends
+    fi
+
+    echo "Creating raid0"
+    udevadm control --stop-exec-queue
+
+    echo "yes" | mdadm --create "$RAIDDISK" --name=data --level=0 --chunk="$RAIDCHUNKSIZE" --raid-devices="$DISKCOUNT" "${DISK_PARTITIONS[@]}"
     udevadm control --start-exec-queue
     mdadm --detail --verbose --scan > /etc/mdadm.conf
 }
@@ -78,8 +83,8 @@ create_raid0_centos() {
 }
 
 do_partition() {
-# This function creates one (1) primary partition on the
-# disk, using all available space
+    # This function creates one (1) primary partition on the
+    # disk, using all available space
     DISK=${1}
     echo "Partitioning disk $DISK"
 
