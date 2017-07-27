@@ -63,385 +63,449 @@
       "1": [
         {
           "lun": 0,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "2": [
         {
           "lun": 1,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "3": [
         {
           "lun": 2,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "4": [
         {
           "lun": 3,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "5": [
         {
           "lun": 4,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "6": [
         {
           "lun": 5,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "7": [
         {
           "lun": 6,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "8": [
         {
           "lun": 7,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "9": [
         {
           "lun": 8,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "10": [
         {
           "lun": 9,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "11": [
         {
           "lun": 10,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "12": [
         {
           "lun": 11,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "13": [
         {
           "lun": 12,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "14": [
         {
           "lun": 13,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "15": [
         {
           "lun": 14,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "16": [
         {
           "lun": 15,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "17": [
         {
           "lun": 16,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "18": [
         {
           "lun": 17,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "19": [
         {
           "lun": 18,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "20": [
         {
           "lun": 19,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "21": [
         {
           "lun": 20,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "22": [
         {
           "lun": 21,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "23": [
         {
           "lun": 22,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "24": [
         {
           "lun": 23,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "25": [
         {
           "lun": 24,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "26": [
         {
           "lun": 25,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "27": [
         {
           "lun": 26,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "28": [
         {
           "lun": 27,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "29": [
         {
           "lun": 28,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "30": [
         {
           "lun": 29,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "31": [
         {
           "lun": 30,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "32": [
         {
           "lun": 31,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "33": [
         {
           "lun": 32,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "34": [
         {
           "lun": 33,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "35": [
         {
           "lun": 34,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "36": [
         {
           "lun": 35,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "37": [
         {
           "lun": 36,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "38": [
         {
           "lun": 37,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "39": [
         {
           "lun": 38,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "40": [
         {
           "lun": 39,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "41": [
         {
           "lun": 40,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "42": [
         {
           "lun": 41,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "43": [
         {
           "lun": 42,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "44": [
         {
           "lun": 43,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "45": [
         {
           "lun": 44,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "46": [
         {
           "lun": 45,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "47": [
         {
           "lun": 46,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "48": [
         {
           "lun": 47,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "49": [
         {
           "lun": 48,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "50": [
         {
           "lun": 49,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "51": [
         {
           "lun": 50,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "52": [
         {
           "lun": 51,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "53": [
         {
           "lun": 52,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "54": [
         {
           "lun": 53,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "55": [
         {
           "lun": 54,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "56": [
         {
           "lun": 55,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "57": [
         {
           "lun": 56,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "58": [
         {
           "lun": 57,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "59": [
         {
           "lun": 58,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "60": [
         {
           "lun": 59,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "61": [
         {
           "lun": 60,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "62": [
         {
           "lun": 61,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "63": [
         {
           "lun": 62,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ],
       "64": [
         {
           "lun": 63,
-          "diskSizeGB": "[parameters('diskSizeGB')]"
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "createOption": "Empty"
         }
       ]
     },
