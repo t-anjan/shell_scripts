@@ -28,23 +28,6 @@
         "description": "This parameter allows the user to select the number of disks they want"
       }
     },
-    "storageAccount": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the storage account where the data disks are stored"
-      }
-    },
-    "diskCaching": {
-      "type": "string",
-      "allowedValues": [
-        "None",
-        "ReadOnly",
-        "ReadWrite"
-      ],
-      "metadata": {
-        "description": "Caching type for the data disks"
-      }
-    },
     "diskSizeGB": {
       "type": "int",
       "minValue": 1,
@@ -52,16 +35,9 @@
       "metadata": {
         "description": "Size of the data disks"
       }
-    },
-    "vmName": {
-      "type": "string",
-      "metadata": {
-        "description": "host name for the VM"
-      }
     }
   },
   "variables": {
-    "vhdContainer": "[concat('http://', parameters('storageAccount'), '.blob.core.windows.net/vhds-', parameters('vmName'), '/')]",
     "_comment1": "disksArray is ugly :( but it gets the job done. If anyone can make it better, please do!",
     "disksArray": {
       "1": "[variables('dataDisks')['1']]",
@@ -86,769 +62,385 @@
     "dataDisks": {
       "1": [
         {
-          "name": "datadisk1",
           "lun": 0,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk1.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "2": [
         {
-          "name": "datadisk2",
           "lun": 1,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk2.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "3": [
         {
-          "name": "datadisk3",
           "lun": 2,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk3.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "4": [
         {
-          "name": "datadisk4",
           "lun": 3,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk4.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "5": [
         {
-          "name": "datadisk5",
           "lun": 4,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk5.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "6": [
         {
-          "name": "datadisk6",
           "lun": 5,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk6.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "7": [
         {
-          "name": "datadisk7",
           "lun": 6,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk7.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "8": [
         {
-          "name": "datadisk8",
           "lun": 7,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk8.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "9": [
         {
-          "name": "datadisk9",
           "lun": 8,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk9.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "10": [
         {
-          "name": "datadisk10",
           "lun": 9,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk10.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "11": [
         {
-          "name": "datadisk11",
           "lun": 10,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk11.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "12": [
         {
-          "name": "datadisk12",
           "lun": 11,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk12.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "13": [
         {
-          "name": "datadisk13",
           "lun": 12,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk13.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "14": [
         {
-          "name": "datadisk14",
           "lun": 13,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk14.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "15": [
         {
-          "name": "datadisk15",
           "lun": 14,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk15.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "16": [
         {
-          "name": "datadisk16",
           "lun": 15,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk16.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "17": [
         {
-          "name": "datadisk17",
           "lun": 16,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk17.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "18": [
         {
-          "name": "datadisk18",
           "lun": 17,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk18.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "19": [
         {
-          "name": "datadisk19",
           "lun": 18,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk19.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "20": [
         {
-          "name": "datadisk20",
           "lun": 19,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk20.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "21": [
         {
-          "name": "datadisk21",
           "lun": 20,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk21.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "22": [
         {
-          "name": "datadisk22",
           "lun": 21,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk22.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "23": [
         {
-          "name": "datadisk23",
           "lun": 22,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk23.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "24": [
         {
-          "name": "datadisk24",
           "lun": 23,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk24.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "25": [
         {
-          "name": "datadisk25",
           "lun": 24,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk25.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "26": [
         {
-          "name": "datadisk26",
           "lun": 25,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk26.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "27": [
         {
-          "name": "datadisk27",
           "lun": 26,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk27.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "28": [
         {
-          "name": "datadisk28",
           "lun": 27,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk28.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "29": [
         {
-          "name": "datadisk29",
           "lun": 28,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk29.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "30": [
         {
-          "name": "datadisk30",
           "lun": 29,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk30.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "31": [
         {
-          "name": "datadisk31",
           "lun": 30,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk31.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "32": [
         {
-          "name": "datadisk32",
           "lun": 31,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk32.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "33": [
         {
-          "name": "datadisk33",
           "lun": 32,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk33.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "34": [
         {
-          "name": "datadisk34",
           "lun": 33,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk34.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "35": [
         {
-          "name": "datadisk35",
           "lun": 34,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk35.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "36": [
         {
-          "name": "datadisk36",
           "lun": 35,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk36.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "37": [
         {
-          "name": "datadisk37",
           "lun": 36,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk37.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "38": [
         {
-          "name": "datadisk38",
           "lun": 37,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk38.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "39": [
         {
-          "name": "datadisk39",
           "lun": 38,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk39.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "40": [
         {
-          "name": "datadisk40",
           "lun": 39,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk40.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "41": [
         {
-          "name": "datadisk41",
           "lun": 40,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk41.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "42": [
         {
-          "name": "datadisk42",
           "lun": 41,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk42.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "43": [
         {
-          "name": "datadisk43",
           "lun": 42,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk43.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "44": [
         {
-          "name": "datadisk44",
           "lun": 43,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk44.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "45": [
         {
-          "name": "datadisk45",
           "lun": 44,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk45.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "46": [
         {
-          "name": "datadisk46",
           "lun": 45,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk46.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "47": [
         {
-          "name": "datadisk47",
           "lun": 46,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk47.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "48": [
         {
-          "name": "datadisk48",
           "lun": 47,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk48.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "49": [
         {
-          "name": "datadisk49",
           "lun": 48,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk49.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "50": [
         {
-          "name": "datadisk50",
           "lun": 49,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk50.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "51": [
         {
-          "name": "datadisk51",
           "lun": 50,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk51.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "52": [
         {
-          "name": "datadisk52",
           "lun": 51,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk52.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "53": [
         {
-          "name": "datadisk53",
           "lun": 52,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk53.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "54": [
         {
-          "name": "datadisk54",
           "lun": 53,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk54.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "55": [
         {
-          "name": "datadisk55",
           "lun": 54,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk55.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "56": [
         {
-          "name": "datadisk56",
           "lun": 55,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk56.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "57": [
         {
-          "name": "datadisk57",
           "lun": 56,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk57.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "58": [
         {
-          "name": "datadisk58",
           "lun": 57,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk58.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "59": [
         {
-          "name": "datadisk59",
           "lun": 58,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk59.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "60": [
         {
-          "name": "datadisk60",
           "lun": 59,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk60.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "61": [
         {
-          "name": "datadisk61",
           "lun": 60,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk61.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "62": [
         {
-          "name": "datadisk62",
           "lun": 61,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk62.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "63": [
         {
-          "name": "datadisk63",
           "lun": 62,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk63.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ],
       "64": [
         {
-          "name": "datadisk64",
           "lun": 63,
-          "vhd": {
-            "uri": "[concat(variables('vhdContainer'), 'datadisk64.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
           "diskSizeGB": "[parameters('diskSizeGB')]"
         }
       ]
